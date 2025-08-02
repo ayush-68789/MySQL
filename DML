@@ -1,0 +1,41 @@
+Create Database  -->  create database dbms ;
+Use Database --> use dbms ;
+
+
+Create Table --> create table stu (roll_no int , name varchar (20) , course varchar(10) , Section char(2) , CPI numeric(4,2));
+View Structure of Table --> desc stu ;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| roll_no | int          | YES  |     | NULL    |       |
+| name    | varchar(20)  | YES  |     | NULL    |       |
+| course  | varchar(10)  | YES  |     | NULL    |       |
+| Section | char(2)      | YES  |     | NULL    |       |
+| CPI     | decimal(4,2) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+
+
+
+Modifying Data type of Column --> alter table stu modify column cpi decimal(3,2);           cpi     | decimal(3,2) | YES  |     | NULL
+
+Adding Another Column -->  alter table stu add column Sem numeric(1);     
+
+Deleting Column -->  alter table stu drop column sem ;
+
+Renaming Column -->  alter table stu rename column name to Name ;
+
+mysql> desc stu ;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| roll_no | int          | YES  |     | NULL    |       |
+| Name    | varchar(20)  | YES  |     | NULL    |       |
+| course  | varchar(10)  | YES  |     | NULL    |       |
+| Section | char(2)      | YES  |     | NULL    |       |
+| cpi     | decimal(3,2) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+5 rows in set (0.029 sec)
+
+
+
+Deleting table -->  drop table stu ;
