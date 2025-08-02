@@ -1,0 +1,16 @@
+DDL - Data Definition Language (Changes the Structure of Table ,  Uses the table keyword in writing commands eg -  create table table_name (id int) )
+      Commands - CAD   ~  create    (creates a table)
+                       ~  alter      (Modifies the attributes(column) of table)
+                       ~  drop        (deletes the entire table)
+
+
+DML - Data Manipulation Language (Changes the data of table , doesnt use table keyword eg - select * fromm table_name ; )
+      Commands    ~ select        (use to fetch the Data from table)
+                  ~ update        (use to update records)
+                  ~ insert        (use to insert records in table)
+                  ~ delete        (delete records)
+
+
+DCL - Data Control Language (Controls the data)
+      Commands    ~ grant
+                  ~ revoke
