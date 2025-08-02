@@ -1,0 +1,5 @@
+To Create Database --> create database database_name ;
+
+To Use Database  -->  use database_name ;
+
+To show Database --> show databases ;
