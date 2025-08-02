@@ -1,0 +1,116 @@
+Inserting Data into Table -->  insert into stu values(400 , 'Ayush', 'B.Tech','FA' , 8.53);
+
+Inserting Data into Specific Column --> insert into stu(name, course, section) values('Ayush', 'B.Tech','FA') ;
+
+Update values --> update stu set roll_no = 589 where section = 'FC' ;
+
+Update Multiple rows with single value --> update stu set roll_no = roll_no + 100 where course = 'B.Tech' ;
+
+
+mysql> select * from stu ;
++---------+-------+--------+---------+------+
+| roll_no | Name  | course | Section | cpi  |
++---------+-------+--------+---------+------+
+|     400 | Ayush | B.Tech | FA      | 8.53 |
+|     589 | Garv  | B.Tech | FC      | 8.12 |
++---------+-------+--------+---------+------+
+2 rows in set (0.008 sec)
+
+mysql> update stu set roll_no = roll_no + 100 where course = 'B.Tech' ;
+Query OK, 2 rows affected (0.042 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from stu ;
++---------+-------+--------+---------+------+
+| roll_no | Name  | course | Section | cpi  |
++---------+-------+--------+---------+------+
+|     500 | Ayush | B.Tech | FA      | 8.53 |
+|     689 | Garv  | B.Tech | FC      | 8.12 |
++---------+-------+--------+---------+------+
+2 rows in set (0.006 sec)
+
+
+
+Update Multiple Columns --> update stu set roll_no = 400 , Course = 'Top 150' where cpi > 8.50 ;
++---------+-------+---------+---------+------+
+| roll_no | Name  | course  | Section | cpi  |
++---------+-------+---------+---------+------+
+|     400 | Ayush | Top 150 | FA      | 8.53 |
+|     689 | Garv  | B.Tech  | FC      | 8.12 |
++---------+-------+---------+---------+------+
+
+
+View all the Data  --> select * from stu ;
+
+View Specific Column --> select course,name from stu ;
++---------+-------+
+| course  | name  |
++---------+-------+
+| Top 150 | Ayush |
+| B.Tech  | Garv  |
++---------+-------+
+
+
+Filtering using Where clause -->  select course,name from stu where cpi > 8.5 ; ;
++---------+-------+
+| course  | name  |
++---------+-------+
+| Top 150 | Ayush |
++---------+-------+
+
+
+Using AND , OR --> select roll_no , section from stu where course = 'Top 150' and cpi > 8.5 ;
++---------+---------+
+| roll_no | section |
++---------+---------+
+|     400 | FA      |
+|     300 | FA      |
++---------+---------+
+
+
+Using BETWEEN --> select roll_no , name from stu where cpi between 8.0 and 9.0 ;
++---------+---------+
+| roll_no | name    |
++---------+---------+
+|     400 | Ayush   |
+|     689 | Garv    |
+|     300 | Anushka |
++---------+---------+
+
+
+Using LIKE --> select roll_no , name from stu where name like 'A%' ;
++---------+---------+
+| roll_no | name    |
++---------+---------+
+|     400 | Ayush   |
+|     756 | Animish |
+|     300 | Anushka |
++---------+---------+
+
+
+--FROM and JOIN: Identify the source tables.
+--WHERE: Filter individual rows.
+--GROUP BY: Group the remaining rows.
+--HAVING: Filter the groups.
+--SELECT: Determine the final columns to be displayed.
+--ORDER BY: Sort the final result set.
+--LIMIT: Restrict the number of rows returned.
+
+
+WHERE ->  GROUP BY -> HAVING -> ORDER BY
+
+
+Group BY -- > select * from stu order by cpi asc ;
++---------+---------+---------+---------+------+
+| roll_no | Name    | course  | Section | cpi  |
++---------+---------+---------+---------+------+
+|     756 | Animish | B.Tech  | BA      | 7.40 |
+|     689 | Garv    | B.Tech  | FC      | 8.12 |
+|     400 | Ayush   | Top 150 | FA      | 8.53 |
+|     300 | Anushka | Top 150 | FA      | 8.56 |
++---------+---------+---------+---------+------+
+
+
+
+Having 
+Delete Data from Column --> delete from stu where roll_no = 402 ;
